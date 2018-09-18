@@ -15,8 +15,21 @@ books = [
 ]
 
 #Welcome to the book store
-
-
+@app.route('/')
+def index():
+    return '''
+    <html>
+        <head>
+            <title>Home - WeGotItFirstBooks Store API</title>
+        </head>
+        <body>
+            <h1>Welcome to WeGotItFirstBooks API</h1>
+            <a href="https://sekayasin-rest-crash.herokuapp.com/books">List all books</a><br>
+            <a href="https://sekayasin-rest-crash.herokuapp.com/books">To Query books, append isbn number up in the URL</a><br>
+            <a href="https://sekayasin-rest-crash.herokuapp.com/books">To Delete a book, append isbn number</a>
+        </body>
+    </html>'''
+    
 #GET /store
 @app.route('/books')
 def get_books():
